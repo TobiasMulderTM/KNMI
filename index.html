@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KNMI Weerdata Visualisatie</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>KNMI Weerdata Visualisatie</h1>
+    </header>
+    <main>
+        <section id="input-form">
+            <h2>Selecteer een weerstation en periode</h2>
+            <form id="weather-form">
+                <label for="station">Weerstation:</label>
+                <select id="station" name="station">
+                    {% for code, name in stations.items() %}
+                    <option value="{{ code }}">{{ name }}</option>
+                    {% endfor %}
+                </select>
+                <label for="start-year">Startjaar:</label>
+                <input type="number" id="start-year" name="start-year" min="1900" max="2024">
+                <label for="end-year">Eindjaar:</label>
+                <input type="number" id="end-year" name="end-year" min="1900" max="2024">
+                <button type="submit">Genereer Grafieken</button>
+            </form>
+        </section>
+        <section id="charts">
+            <h2>Visualisaties</h2>
+            <div class="chart-container">
+                <div>
+                    <h3>Temperatuur</h3>
+                    <img id="temp-img" alt="Temperatuur Grafiek">
+                </div>
+                <div class="chart-description">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+                </div>
+            </div>
+            <div class="chart-container">
+                <div>
+                    <h3>Neerslag</h3>
+                    <img id="precip-img" alt="Neerslag Grafiek">
+                </div>
+                <div class="chart-description">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+                </div>
+            </div>
+            <div class="chart-container">
+                <div>
+                    <h3>Gemiddelde Netto Neerslag</h3>
+                    <img id="recharge-img" alt="Gemiddelde Netto Neerslag Grafiek">
+                </div>
+                <div class="chart-description">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+                </div>
+            </div>
+            <div class="chart-container">
+                <div>
+                    <h3>Gemiddelde Netto Neerslag</h3>
+                    <img id="recharge_month-img" alt="Gemiddelde maandelijkse aanvulling Grafiek">
+                </div>
+                <div class="chart-description">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 KNMI Weerdata Visualisatie</p>
+    </footer>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>

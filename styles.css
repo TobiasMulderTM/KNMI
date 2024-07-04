@@ -1,0 +1,98 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #007BFF;
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+
+main {
+    padding: 2em;
+}
+
+section {
+    background-color: white;
+    margin: 1em 0;
+    padding: 1em;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin: 0.5em 0 0.2em;
+}
+
+input, select, button {
+    padding: 0.5em;
+    margin: 0.2em 0;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    background-color: #007BFF;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.chart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2em;
+}
+
+.chart-container img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1em;
+}
+
+.chart-description {
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .chart-container {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .chart-container img {
+        margin-right: 2em;
+        margin-bottom: 0;
+    }
+
+    .chart-description {
+        text-align: left;
+    }
+}
